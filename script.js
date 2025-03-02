@@ -2991,6 +2991,8 @@ function addGraphStyles() {
   document.head.appendChild(style);
 }
 
+const enabledTopics = ["compound"];
+
 // Navigation event listeners
 document.addEventListener("DOMContentLoaded", function () {
   // Add custom styles for inequalities graphs
@@ -2998,6 +3000,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Topic navigation
   const topicLinks = document.querySelectorAll("#topics-nav .nav-link");
+  topicLinks.forEach((link) => {
+    if (!enabledTopics.includes(link.getAttribute("data-topic"))) {
+      // Add a custom disabled class for styling
+      link.classList.add("disabled");
+      // Disable pointer events to prevent clicks
+      link.style.pointerEvents = "none";
+      // Optionally, lower the opacity to visually indicate it is disabled
+      link.style.opacity = "0.5";
+    }
+  });
 
   topicLinks.forEach((link) => {
     link.addEventListener("click", function (e) {

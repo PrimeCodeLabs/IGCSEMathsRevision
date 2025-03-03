@@ -723,7 +723,7 @@ const lessons = {
       <div class="lesson">
         <h2>Graphical Inequalities</h2>
         <p>
-          <strong>Definition:</strong> Graphical inequalities indicate which regions of a coordinate plane satisfy a given inequality. The boundary is drawn as a line—dashed for strict inequalities (< or >) and solid for inclusive inequalities (≤ or ≥)—and then the appropriate region is shaded.
+          <strong>Definition:</strong> Graphical inequalities indicate which regions of a coordinate plane satisfy a given inequality. The boundary is drawn as a line—dashed for strict inequalities (&lt; or &gt;) and solid for inclusive inequalities (≤ or ≥)—and then the appropriate region is shaded.
         </p>
         <p><strong>Step-by-Step Method:</strong></p>
         <ol>
@@ -737,44 +737,143 @@ const lessons = {
           <button onclick="showExample(1)" class="btn btn-primary">Example 1: y > 2x + 1</button>
           <button onclick="showExample(2)" class="btn btn-primary">Example 2: y ≤ -x + 4</button>
           <button onclick="showExample(3)" class="btn btn-primary">Example 3: 1 < x + 2 ≤ 5</button>
+          <button onclick="showExample(4)" class="btn btn-primary">Example 4: System of Inequalities</button>
+          <button onclick="showExample(5)" class="btn btn-primary">Example 5: Quadratic Inequality</button>
         </div>
         
+        <!-- Example 1 -->
         <div id="example1" class="example-section">
           <h3>Example 1: y > 2x + 1</h3>
           <div id="graph1" class="graph-container"></div>
           <div class="steps">
             <ol>
-              <li>Draw the line <span class="formula">y = 2x + 1</span> using a <span class="key-point">dashed line</span> (since > is a strict inequality).</li>
-              <li>Test the point (0,0): Substitute into the inequality: <span class="formula">0 > 2(0) + 1</span>, i.e., <span class="formula">0 > 1</span> which is <span class="key-point">false</span>.</li>
-              <li>Shade the region that does <span class="key-point">not</span> contain (0,0), which is the region above the line.</li>
+              <li>
+                <strong>Draw the boundary:</strong>
+                <br />Plot the line <span class="formula">y = 2x + 1</span> using a <span class="key-point">dashed line</span> because the inequality is strict (>) .
+              </li>
+              <li>
+                <strong>Test a point:</strong>
+                <br />Choose (0,0) and substitute: <span class="formula">0 > 2(0) + 1</span> becomes <span class="formula">0 > 1</span>, which is <span class="key-point">false</span>.
+              </li>
+              <li>
+                <strong>Shade the region:</strong>
+                <br />Since the test point does not satisfy the inequality, shade the region that does not include (0,0). This is the area above the line.
+              </li>
             </ol>
           </div>
         </div>
         
+        <!-- Example 2 -->
         <div id="example2" class="example-section" style="display: none;">
           <h3>Example 2: y ≤ -x + 4</h3>
           <div id="graph2" class="graph-container"></div>
           <div class="steps">
             <ol>
-              <li>Draw the line <span class="formula">y = -x + 4</span> using a <span class="key-point">solid line</span> (since ≤ is an inclusive inequality).</li>
-              <li>Test the point (0,0): Substitute into the inequality: <span class="formula">0 ≤ -0 + 4</span>, i.e., <span class="formula">0 ≤ 4</span> which is <span class="key-point">true</span>.</li>
-              <li>Shade the region containing (0,0), which is the region below the line.</li>
+              <li>
+                <strong>Draw the boundary:</strong>
+                <br />Plot the line <span class="formula">y = -x + 4</span> using a <span class="key-point">solid line</span> because the inequality is inclusive (≤).
+              </li>
+              <li>
+                <strong>Test a point:</strong>
+                <br />Choose (0,0) and substitute: <span class="formula">0 ≤ -0 + 4</span> simplifies to <span class="formula">0 ≤ 4</span>, which is <span class="key-point">true</span>.
+              </li>
+              <li>
+                <strong>Shade the region:</strong>
+                <br />Since (0,0) satisfies the inequality, shade the region that includes (0,0). This is the area below (or including) the line.
+              </li>
             </ol>
           </div>
         </div>
         
+        <!-- Example 3 -->
         <div id="example3" class="example-section" style="display: none;">
           <h3>Example 3: Compound Inequality 1 < x + 2 ≤ 5</h3>
           <div id="graph3" class="graph-container"></div>
           <div class="steps">
             <ol>
-              <li>Solve for x by subtracting 2: <span class="formula">-1 < x ≤ 3</span>.</li>
-              <li>This represents values of x between -1 and 3, where -1 is excluded and 3 is included.</li>
-              <li>On a number line, use an open circle at x = -1 and a closed circle at x = 3.</li>
-              <li>On a coordinate plane, this creates a vertical band between these x-values.</li>
+              <li>
+                <strong>Simplify the inequality:</strong>
+                <br />Subtract 2 from all parts to get: <span class="formula">-1 < x ≤ 3</span>.
+              </li>
+              <li>
+                <strong>Interpret the inequality:</strong>
+                <br />This represents all values of x between -1 and 3, with -1 excluded (open circle) and 3 included (closed circle).
+              </li>
+              <li>
+                <strong>Graph on a number line:</strong>
+                <br />Mark an open circle at x = -1 and a closed circle at x = 3.
+              </li>
+              <li>
+                <strong>Shade the region:</strong>
+                <br />Shade the vertical band (if extended to a coordinate plane) between x = -1 and x = 3.
+              </li>
             </ol>
           </div>
         </div>
+        
+        <!-- Example 4 -->
+        <div id="example4" class="example-section" style="display: none;">
+          <h3>Example 4: System of Linear Inequalities</h3>
+          <p>Solve and graph the system of inequalities:</p>
+          <ul>
+            <li><span class="formula">y ≥ x + 1</span></li>
+            <li><span class="formula">y &lt; -2x + 6</span></li>
+          </ul>
+          <div id="graph4" class="graph-container"></div>
+          <div class="steps">
+            <ol>
+              <li>
+                <strong>Graph the first inequality:</strong>
+                <br />Plot <span class="formula">y = x + 1</span> with a <span class="key-point">solid line</span> (since the inequality is ≥). Test (0,0): <span class="formula">0 ≥ 0 + 1</span> is false, so shade the side that does not include (0,0).
+              </li>
+              <li>
+                <strong>Graph the second inequality:</strong>
+                <br />Plot <span class="formula">y = -2x + 6</span> with a <span class="key-point">dashed line</span> (since the inequality is strict, <). Test (0,0): <span class="formula">0 &lt; 6</span> is true, so shade the side that includes (0,0).
+              </li>
+              <li>
+                <strong>Determine the solution region:</strong>
+                <br />The overall solution is the intersection of the two shaded regions, where both conditions are satisfied.
+              </li>
+            </ol>
+          </div>
+        </div>
+        
+        <!-- Example 5 -->
+        <div id="example5" class="example-section" style="display: none;">
+          <h3>Example 5: Quadratic Inequality</h3>
+          <p>Graph the quadratic inequality:</p>
+          <ul>
+            <li><span class="formula">y ≤ x<sup>2</sup> - 4</span></li>
+          </ul>
+          <div id="graph5" class="graph-container"></div>
+          <div class="steps">
+            <ol>
+              <li>
+                <strong>Identify the boundary:</strong>
+                <br />The boundary is the parabola <span class="formula">y = x<sup>2</sup> - 4</span>. Since the inequality is ≤, the parabola is drawn with a <span class="key-point">solid curve</span>.
+              </li>
+              <li>
+                <strong>Plot the parabola:</strong>
+                <br />Sketch the curve by plotting key points (for example, at x = 0, y = -4; at x = 2, y = 0; at x = -2, y = 0).
+              </li>
+              <li>
+                <strong>Test a point:</strong>
+                <br />Choose a point not on the parabola, such as (0,0). Substitute into the inequality: <span class="formula">0 ≤ 0<sup>2</sup> - 4</span> gives <span class="formula">0 ≤ -4</span>, which is <span class="key-point">false</span>.
+              </li>
+              <li>
+                <strong>Shade the region:</strong>
+                <br />Since the test point fails the inequality, shade the region that does not include (0,0); in this case, shade the area <em>below</em> the parabola, which represents the set of points where $$y$$ is less than or equal to $$x^2 - 4$$.
+              </li>
+            </ol>
+          </div>
+        </div>
+        
+        <p><strong>Additional Tips:</strong></p>
+        <ul>
+          <li>Always double-check your test points to ensure you shade the correct region.</li>
+          <li>For compound inequalities, it is helpful to solve the inequality algebraically first and then graph the resulting boundary on a number line or coordinate plane.</li>
+          <li>When working with systems of inequalities, the solution is the intersection of the individual solution regions.</li>
+        </ul>
       </div>
     `,
   },
@@ -2922,150 +3021,255 @@ function initializeGraphs() {
     });
   }
 
+  // Example 4: System of Linear Inequalities
+  if (document.getElementById("graph4")) {
+    graphCalculators[4] = Desmos.Calculator(document.getElementById("graph4"), {
+      expressions: false,
+      settingsMenu: false,
+      zoomButtons: true,
+      lockViewport: false,
+      border: false,
+    });
+  }
+
+  // Example 5: Quadratic Inequality
+  if (document.getElementById("graph5")) {
+    graphCalculators[5] = Desmos.Calculator(document.getElementById("graph5"), {
+      expressions: false,
+      settingsMenu: false,
+      zoomButtons: true,
+      lockViewport: false,
+      border: false,
+    });
+  }
+
   setupGraphs();
 }
 
 // Set up the graph expressions and styling
 function setupGraphs() {
-  if (!graphCalculators[1]) return;
+  // Example 1: y > 2x + 1
+  if (graphCalculators[1]) {
+    graphCalculators[1].setMathBounds({
+      left: -5,
+      right: 5,
+      bottom: -3,
+      top: 7,
+    });
 
-  // Setup Example 1: y > 2x + 1
-  graphCalculators[1].setMathBounds({
-    left: -5,
-    right: 5,
-    bottom: -3,
-    top: 7,
-  });
+    // Boundary: y = 2x + 1 (dashed for strict inequality)
+    graphCalculators[1].setExpression({
+      id: "boundary1",
+      latex: "y = 2x + 1",
+      color: Desmos.Colors.BLUE,
+      lineStyle: Desmos.Styles.DASHED,
+    });
 
-  // y = 2x + 1 (dashed)
-  graphCalculators[1].setExpression({
-    id: "boundary1",
-    latex: "y = 2x + 1",
-    color: Desmos.Colors.BLUE,
-    lineStyle: Desmos.Styles.DASHED,
-  });
+    // Region: y > 2x + 1
+    graphCalculators[1].setExpression({
+      id: "region1",
+      latex: "y > 2x + 1",
+      color: Desmos.Colors.BLUE,
+      lineWidth: 0,
+    });
 
-  // Shade the region y > 2x + 1
-  graphCalculators[1].setExpression({
-    id: "region1",
-    latex: "y > 2x + 1",
-    color: Desmos.Colors.BLUE,
-    lineWidth: 0,
-  });
+    // Test point (0,0)
+    graphCalculators[1].setExpression({
+      id: "testpoint1",
+      latex: "(0,0)",
+      color: Desmos.Colors.GREEN,
+      pointSize: 9,
+      label: "(0,0)",
+    });
 
-  // Test point (0,0)
-  graphCalculators[1].setExpression({
-    id: "testpoint1",
-    latex: "(0,0)",
-    color: Desmos.Colors.GREEN,
-    pointSize: 9,
-    label: "(0,0)",
-  });
+    // Point on y-intercept (0,1)
+    graphCalculators[1].setExpression({
+      id: "yint1",
+      latex: "(0,1)",
+      color: Desmos.Colors.RED,
+      pointSize: 9,
+      label: "(0,1)",
+    });
+  }
 
-  // Point on y-intercept
-  graphCalculators[1].setExpression({
-    id: "yint1",
-    latex: "(0,1)",
-    color: Desmos.Colors.RED,
-    pointSize: 9,
-    label: "(0,1)",
-  });
+  // Example 2: y ≤ -x + 4
+  if (graphCalculators[2]) {
+    graphCalculators[2].setMathBounds({
+      left: -5,
+      right: 5,
+      bottom: -3,
+      top: 7,
+    });
 
-  // Only setup other calculators if they exist
-  if (!graphCalculators[2]) return;
+    // Boundary: y = -x + 4 (solid for inclusive inequality)
+    graphCalculators[2].setExpression({
+      id: "boundary2",
+      latex: "y = -x + 4",
+      color: Desmos.Colors.BLUE,
+    });
 
-  // Setup Example 2: y ≤ -x + 4
-  graphCalculators[2].setMathBounds({
-    left: -5,
-    right: 5,
-    bottom: -3,
-    top: 7,
-  });
+    // Region: y ≤ -x + 4
+    graphCalculators[2].setExpression({
+      id: "region2",
+      latex: "y \\le -x + 4",
+      color: Desmos.Colors.BLUE,
+      lineWidth: 0,
+    });
 
-  // y = -x + 4 (solid)
-  graphCalculators[2].setExpression({
-    id: "boundary2",
-    latex: "y = -x + 4",
-    color: Desmos.Colors.BLUE,
-  });
+    // Test point (0,0)
+    graphCalculators[2].setExpression({
+      id: "testpoint2",
+      latex: "(0,0)",
+      color: Desmos.Colors.GREEN,
+      pointSize: 9,
+      label: "(0,0)",
+    });
 
-  // Shade the region y ≤ -x + 4
-  graphCalculators[2].setExpression({
-    id: "region2",
-    latex: "y \\le -x + 4",
-    color: Desmos.Colors.BLUE,
-    lineWidth: 0,
-  });
+    // Point on y-intercept (0,4)
+    graphCalculators[2].setExpression({
+      id: "yint2",
+      latex: "(0,4)",
+      color: Desmos.Colors.RED,
+      pointSize: 9,
+      label: "(0,4)",
+    });
+  }
 
-  // Test point (0,0)
-  graphCalculators[2].setExpression({
-    id: "testpoint2",
-    latex: "(0,0)",
-    color: Desmos.Colors.GREEN,
-    pointSize: 9,
-    label: "(0,0)",
-  });
+  // Example 3: Compound Inequality -1 < x ≤ 3
+  if (graphCalculators[3]) {
+    graphCalculators[3].setMathBounds({
+      left: -5,
+      right: 5,
+      bottom: -3,
+      top: 3,
+    });
 
-  // Point on y-intercept
-  graphCalculators[2].setExpression({
-    id: "yint2",
-    latex: "(0,4)",
-    color: Desmos.Colors.RED,
-    pointSize: 9,
-    label: "(0,4)",
-  });
+    // Left vertical boundary: x = -1 (dashed, excluded)
+    graphCalculators[3].setExpression({
+      id: "left_bound",
+      latex: "x = -1",
+      color: Desmos.Colors.BLUE,
+      lineStyle: Desmos.Styles.DASHED,
+    });
 
-  if (!graphCalculators[3]) return;
+    // Right vertical boundary: x = 3 (solid, included)
+    graphCalculators[3].setExpression({
+      id: "right_bound",
+      latex: "x = 3",
+      color: Desmos.Colors.BLUE,
+    });
 
-  // Setup Example 3: -1 < x ≤ 3
-  graphCalculators[3].setMathBounds({
-    left: -5,
-    right: 5,
-    bottom: -3,
-    top: 3,
-  });
+    // Region: -1 < x ≤ 3
+    graphCalculators[3].setExpression({
+      id: "region3",
+      latex: "-1 < x \\le 3",
+      color: Desmos.Colors.BLUE,
+      lineWidth: 0,
+    });
 
-  // Vertical line at x = -1 (dashed)
-  graphCalculators[3].setExpression({
-    id: "left_bound",
-    latex: "x = -1",
-    color: Desmos.Colors.BLUE,
-    lineStyle: Desmos.Styles.DASHED,
-  });
+    // Open point at x = -1
+    graphCalculators[3].setExpression({
+      id: "leftpoint",
+      latex: "(-1,0)",
+      color: Desmos.Colors.RED,
+      pointSize: 9,
+      pointStyle: "OPEN",
+      label: "x = -1",
+    });
 
-  // Vertical line at x = 3 (solid)
-  graphCalculators[3].setExpression({
-    id: "right_bound",
-    latex: "x = 3",
-    color: Desmos.Colors.BLUE,
-  });
+    // Closed point at x = 3
+    graphCalculators[3].setExpression({
+      id: "rightpoint",
+      latex: "(3,0)",
+      color: Desmos.Colors.RED,
+      pointSize: 9,
+      label: "x = 3",
+    });
+  }
 
-  // Shade the region -1 < x ≤ 3
-  graphCalculators[3].setExpression({
-    id: "region3",
-    latex: "-1 < x \\le 3",
-    color: Desmos.Colors.BLUE,
-    lineWidth: 0,
-  });
+  // Example 4: System of Linear Inequalities: y ≥ x + 1 and y < -2x + 6
+  if (graphCalculators[4]) {
+    graphCalculators[4].setMathBounds({
+      left: -5,
+      right: 5,
+      bottom: -3,
+      top: 7,
+    });
 
-  // Point excluded at x = -1
-  graphCalculators[3].setExpression({
-    id: "leftpoint",
-    latex: "(-1,0)",
-    color: Desmos.Colors.RED,
-    pointSize: 9,
-    pointStyle: "OPEN",
-    label: "x = -1",
-  });
+    // First inequality: y ≥ x + 1
+    // Boundary line (solid since it's inclusive)
+    graphCalculators[4].setExpression({
+      id: "boundary4_1",
+      latex: "y = x + 1",
+      color: Desmos.Colors.BLUE,
+    });
+    // Region: y ≥ x + 1
+    graphCalculators[4].setExpression({
+      id: "region4_1",
+      latex: "y \\ge x + 1",
+      color: Desmos.Colors.BLUE,
+      lineWidth: 0,
+    });
 
-  // Point included at x = 3
-  graphCalculators[3].setExpression({
-    id: "rightpoint",
-    latex: "(3,0)",
-    color: Desmos.Colors.RED,
-    pointSize: 9,
-    label: "x = 3",
-  });
+    // Second inequality: y < -2x + 6
+    // Boundary line (dashed since the inequality is strict)
+    graphCalculators[4].setExpression({
+      id: "boundary4_2",
+      latex: "y = -2x + 6",
+      color: Desmos.Colors.ORANGE,
+      lineStyle: Desmos.Styles.DASHED,
+    });
+    // Region: y < -2x + 6
+    graphCalculators[4].setExpression({
+      id: "region4_2",
+      latex: "y < -2x + 6",
+      color: Desmos.Colors.ORANGE,
+      lineWidth: 0,
+    });
+
+    // Test point (0,0) for the system
+    graphCalculators[4].setExpression({
+      id: "testpoint4",
+      latex: "(0,0)",
+      color: Desmos.Colors.GREEN,
+      pointSize: 9,
+      label: "(0,0)",
+    });
+  }
+
+  // Example 5: Quadratic Inequality: y ≤ x^2 - 4
+  if (graphCalculators[5]) {
+    graphCalculators[5].setMathBounds({
+      left: -5,
+      right: 5,
+      bottom: -5,
+      top: 5,
+    });
+
+    // Boundary: y = x^2 - 4 (solid curve for inclusive inequality)
+    graphCalculators[5].setExpression({
+      id: "boundary5",
+      latex: "y = x^2 - 4",
+      color: Desmos.Colors.BLUE,
+    });
+
+    // Region: y ≤ x^2 - 4
+    graphCalculators[5].setExpression({
+      id: "region5",
+      latex: "y \\le x^2 - 4",
+      color: Desmos.Colors.BLUE,
+      lineWidth: 0,
+    });
+
+    // Test point (0,0)
+    graphCalculators[5].setExpression({
+      id: "testpoint5",
+      latex: "(0,0)",
+      color: Desmos.Colors.GREEN,
+      pointSize: 9,
+      label: "(0,0)",
+    });
+  }
 }
 
 // Function to show a specific example
@@ -3453,7 +3657,12 @@ function addGraphStyles() {
   document.head.appendChild(style);
 }
 
-const enabledTopics = ["compound", "quadraticEquation", "completingTheSquare"];
+const enabledTopics = [
+  "compound",
+  "quadraticEquation",
+  "completingTheSquare",
+  "inequalities",
+];
 
 // Navigation event listeners
 document.addEventListener("DOMContentLoaded", function () {

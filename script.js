@@ -309,63 +309,156 @@ const lessons = {
           $$ax^2 + bx + c = 0.$$ 
         </p>
         <p>
-          <strong>Formula:</strong> $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$
+          <strong>Formula:</strong> 
+          $$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$
         </p>
         <p><strong>Step-by-Step Method:</strong></p>
         <ol>
-          <li><em>Identify coefficients:</em> Determine $$a, b, c$$ from the equation.</li>
-          <li><em>Compute the discriminant:</em> Calculate $$\\Delta = b^2 - 4ac.$$</li>
-          <li><em>Evaluate the square root:</em> Find $$\\sqrt{\\Delta}.$$</li>
-          <li><em>Substitute and simplify:</em> Plug these values into the formula and simplify to obtain the solution(s) for $$x$$.</li>
+          <li><em>Identify coefficients:</em> Determine $$a, b, c$$ by comparing your equation to the standard form $$ax^2 + bx + c = 0.$$</li>
+          <li><em>Compute the discriminant:</em> Calculate $$\\Delta = b^2 - 4ac.$$ This tells you the nature of the roots (real and distinct, real and repeated, or complex).</li>
+          <li><em>Evaluate the square root:</em> Find $$\\sqrt{\\Delta}.$$ If $$\\Delta < 0,$$ you will deal with imaginary numbers.</li>
+          <li><em>Substitute and simplify:</em> Plug these values into the quadratic formula and simplify to obtain the solution(s) for $$x$$.</li>
         </ol>
+  
         <div class="example">
           <h3>Example 1: Two Distinct Real Roots</h3>
           <p>Solve $$2x^2 + 4x - 6 = 0.$$</p>
           <ol>
-            <li>Coefficients: $$a = 2, b = 4, c = -6$$.</li>
-            <li>Discriminant: 
-              $$\\Delta = 4^2 - 4 \\times 2 \\times (-6) = 16 + 48 = 64.$$</li>
-            <li>Solve: 
-              $$x = \\frac{-4 \\pm \\sqrt{64}}{2 \\times 2} = \\frac{-4 \\pm 8}{4}.$$</li>
-            <li>Thus, the solutions are: 
-              $$x = \\frac{-4+8}{4} = 1$$ or $$x = \\frac{-4-8}{4} = -3.$$</li>
+            <li>
+              <strong>Identify the coefficients:</strong> 
+              <br />
+              By comparing $$2x^2 + 4x - 6 = 0$$ with $$ax^2 + bx + c = 0,$$ 
+              we see that $$a = 2, b = 4, c = -6.$$ 
+            </li>
+            <li>
+              <strong>Compute the discriminant:</strong> 
+              <br />
+              Use $$\\Delta = b^2 - 4ac.$$ Here, 
+              $$\\Delta = 4^2 - 4 \\times 2 \\times (-6) = 16 + 48 = 64.$$ 
+              Since $$\\Delta > 0,$$ we expect two distinct real solutions.
+            </li>
+            <li>
+              <strong>Substitute into the quadratic formula:</strong>
+              <br />
+              $$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-4 \\pm \\sqrt{64}}{2 \\times 2} = \\frac{-4 \\pm 8}{4}.$$ 
+              We used $$b = 4,$$ $$\\Delta = 64,$$ and $$a = 2.$$ 
+              Simplifying, we get 
+              $$x = \\frac{-4 \\pm 8}{4}.$$
+            </li>
+            <li>
+              <strong>Simplify to find the roots:</strong>
+              <br />
+              Consider the two cases:
+              <ul>
+                <li>
+                  $$x = \\frac{-4 + 8}{4} = \\frac{4}{4} = 1.$$
+                </li>
+                <li>
+                  $$x = \\frac{-4 - 8}{4} = \\frac{-12}{4} = -3.$$
+                </li>
+              </ul>
+              Therefore, the solutions are 
+              $$x = 1 \\text{ and } x = -3.$$
+            </li>
           </ol>
         </div>
+  
         <div class="example">
           <h3>Example 2: Repeated Root</h3>
           <p>Solve $$x^2 - 4x + 4 = 0.$$</p>
           <ol>
-            <li>Coefficients: $$a = 1, b = -4, c = 4$$.</li>
-            <li>Discriminant: 
-              $$\\Delta = (-4)^2 - 4 \\times 1 \\times 4 = 16 - 16 = 0.$$</li>
-            <li>Solve: 
-              $$x = \\frac{-(-4) \\pm \\sqrt{0}}{2} = \\frac{4}{2} = 2.$$</li>
-            <li>There is one repeated root: $$x = 2$$.</li>
+            <li>
+              <strong>Identify the coefficients:</strong> 
+              <br />
+              By comparing $$x^2 - 4x + 4 = 0$$ with $$ax^2 + bx + c = 0,$$
+              we see that $$a = 1, b = -4, c = 4.$$ 
+            </li>
+            <li>
+              <strong>Compute the discriminant:</strong> 
+              <br />
+              $$\\Delta = b^2 - 4ac = (-4)^2 - 4 \\times 1 \\times 4 = 16 - 16 = 0.$$ 
+              A zero discriminant means there will be a single unique solution (repeated root).
+            </li>
+            <li>
+              <strong>Substitute into the quadratic formula:</strong> 
+              <br />
+              $$x = \\frac{-(-4) \\pm \\sqrt{0}}{2 \\times 1} = \\frac{4 \\pm 0}{2} = 2.$$ 
+              Since the square root of 0 is 0, both solutions are the same.
+            </li>
+            <li>
+              <strong>Interpret the solution:</strong> 
+              <br />
+              There is one repeated real root: 
+              $$x = 2.$$ 
+            </li>
           </ol>
         </div>
+  
         <div class="example">
           <h3>Example 3: Two Distinct Real Roots (Simple Numbers)</h3>
           <p>Solve $$x^2 + 3x - 10 = 0.$$</p>
           <ol>
-            <li>Coefficients: $$a = 1, b = 3, c = -10$$.</li>
-            <li>Discriminant: 
-              $$\\Delta = 3^2 - 4 \\times 1 \\times (-10) = 9 + 40 = 49.$$</li>
-            <li>Solve: 
-              $$x = \\frac{-3 \\pm \\sqrt{49}}{2} = \\frac{-3 \\pm 7}{2}.$$</li>
-            <li>Thus, $$x = 2$$ or $$x = -5.$$</li>
+            <li>
+              <strong>Identify the coefficients:</strong>
+              <br />
+              By comparing $$x^2 + 3x - 10 = 0$$ with $$ax^2 + bx + c = 0,$$ 
+              we have $$a = 1, b = 3, c = -10.$$
+            </li>
+            <li>
+              <strong>Compute the discriminant:</strong>
+              <br />
+              $$\\Delta = b^2 - 4ac = 3^2 - 4 \\times 1 \\times (-10) = 9 + 40 = 49.$$ 
+              Because $$\\Delta = 49 > 0,$$ we again expect two distinct real solutions.
+            </li>
+            <li>
+              <strong>Substitute into the quadratic formula:</strong>
+              <br />
+              $$x = \\frac{-3 \\pm \\sqrt{49}}{2 \\times 1} = \\frac{-3 \\pm 7}{2}.$$ 
+              Simplifying the square root gives 
+              $$\\sqrt{49} = 7.$$
+            </li>
+            <li>
+              <strong>Simplify to find the roots:</strong>
+              <br />
+              <ul>
+                <li>
+                  $$x = \\frac{-3 + 7}{2} = \\frac{4}{2} = 2.$$
+                </li>
+                <li>
+                  $$x = \\frac{-3 - 7}{2} = \\frac{-10}{2} = -5.$$
+                </li>
+              </ul>
+              Thus, the solutions are 
+              $$x = 2 \\text{ and } x = -5.$$
+            </li>
           </ol>
         </div>
+  
         <div class="example">
           <h3>Example 4: Complex Roots</h3>
           <p>Solve $$x^2 + 2x + 5 = 0.$$</p>
           <ol>
-            <li>Coefficients: $$a = 1, b = 2, c = 5$$.</li>
-            <li>Discriminant: 
-              $$\\Delta = 2^2 - 4 \\times 1 \\times 5 = 4 - 20 = -16.$$</li>
-            <li>Since $$\\Delta < 0$$, the solutions are complex:
-              $$x = \\frac{-2 \\pm \\sqrt{-16}}{2} = \\frac{-2 \\pm 4i}{2} = -1 \\pm 2i.$$</li>
+            <li>
+              <strong>Identify the coefficients:</strong>
+              <br />
+              By comparing $$x^2 + 2x + 5 = 0$$ with $$ax^2 + bx + c = 0,$$
+              we get $$a = 1, b = 2, c = 5.$$
+            </li>
+            <li>
+              <strong>Compute the discriminant:</strong>
+              <br />
+              $$\\Delta = b^2 - 4ac = 2^2 - 4 \\times 1 \\times 5 = 4 - 20 = -16.$$ 
+              Since $$\\Delta < 0,$$ we have complex (imaginary) solutions.
+            </li>
+            <li>
+              <strong>Substitute into the quadratic formula:</strong>
+              <br />
+              $$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-2 \\pm \\sqrt{-16}}{2} = \\frac{-2 \\pm 4i}{2} = -1 \\pm 2i.$$ 
+              Here, $$\\sqrt{-16} = 4i.$$
+            </li>
           </ol>
         </div>
+  
         <p><strong>Additional Tips:</strong></p>
         <ul>
           <li>If $$\\Delta > 0$$, there are two distinct real roots.</li>

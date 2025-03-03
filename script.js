@@ -305,7 +305,7 @@ const lessons = {
       <div class="lesson">
         <h2>Quadratic Equations: Quadratic Formula</h2>
         <p>
-          <strong>Definition:</strong> The quadratic formula can be used to solve any quadratic equation in the form 
+          <strong>Definition:</strong> The quadratic formula can be used to solve any quadratic equation of the form 
           $$ax^2 + bx + c = 0.$$ 
         </p>
         <p>
@@ -313,53 +313,63 @@ const lessons = {
         </p>
         <p><strong>Step-by-Step Method:</strong></p>
         <ol>
-          <li><em>Identify coefficients:</em> Determine $a$, $b$, and $c$ from the equation.</li>
+          <li><em>Identify coefficients:</em> Determine $$a, b, c$$ from the equation.</li>
           <li><em>Compute the discriminant:</em> Calculate $$\\Delta = b^2 - 4ac.$$</li>
           <li><em>Evaluate the square root:</em> Find $$\\sqrt{\\Delta}.$$</li>
-          <li><em>Substitute and simplify:</em> Plug these values into the formula and simplify to obtain $x$.</li>
+          <li><em>Substitute and simplify:</em> Plug these values into the formula and simplify to obtain the solution(s) for $$x$$.</li>
         </ol>
         <div class="example">
-          <h3>Example 1</h3>
+          <h3>Example 1: Two Distinct Real Roots</h3>
           <p>Solve $$2x^2 + 4x - 6 = 0.$$</p>
           <ol>
-            <li>Coefficients: $a = 2$, $b = 4$, $c = -6$.</li>
-            <li>Discriminant: $$\\Delta = 4^2 - 4 \\times 2 \\times (-6) = 16 + 48 = 64.$$</li>
+            <li>Coefficients: $$a = 2, b = 4, c = -6$$.</li>
+            <li>Discriminant: 
+              $$\\Delta = 4^2 - 4 \\times 2 \\times (-6) = 16 + 48 = 64.$$</li>
             <li>Solve: 
-              $$x = \\frac{-4 \\pm \\sqrt{64}}{2 \\times 2} = \\frac{-4 \\pm 8}{4}.$$ 
-            </li>
-            <li>Thus, $$x = \\frac{-4+8}{4}=1$$ or $$x = \\frac{-4-8}{4}=-3.$$</li>
+              $$x = \\frac{-4 \\pm \\sqrt{64}}{2 \\times 2} = \\frac{-4 \\pm 8}{4}.$$</li>
+            <li>Thus, the solutions are: 
+              $$x = \\frac{-4+8}{4} = 1$$ or $$x = \\frac{-4-8}{4} = -3.$$</li>
           </ol>
         </div>
         <div class="example">
-          <h3>Example 2</h3>
+          <h3>Example 2: Repeated Root</h3>
           <p>Solve $$x^2 - 4x + 4 = 0.$$</p>
           <ol>
-            <li>Coefficients: $a = 1$, $b = -4$, $c = 4$.</li>
-            <li>Discriminant: $$\\Delta = (-4)^2 - 4 \\times 1 \\times 4 = 16 - 16 = 0.$$</li>
+            <li>Coefficients: $$a = 1, b = -4, c = 4$$.</li>
+            <li>Discriminant: 
+              $$\\Delta = (-4)^2 - 4 \\times 1 \\times 4 = 16 - 16 = 0.$$</li>
             <li>Solve: 
-              $$x = \\frac{-(-4) \\pm \\sqrt{0}}{2} = \\frac{4}{2} = 2.$$ 
-            </li>
-            <li>There is one repeated root: $x = 2$.</li>
+              $$x = \\frac{-(-4) \\pm \\sqrt{0}}{2} = \\frac{4}{2} = 2.$$</li>
+            <li>There is one repeated root: $$x = 2$$.</li>
           </ol>
         </div>
         <div class="example">
-          <h3>Example 3</h3>
+          <h3>Example 3: Two Distinct Real Roots (Simple Numbers)</h3>
           <p>Solve $$x^2 + 3x - 10 = 0.$$</p>
           <ol>
-            <li>Coefficients: $a = 1$, $b = 3$, $c = -10$.</li>
+            <li>Coefficients: $$a = 1, b = 3, c = -10$$.</li>
             <li>Discriminant: 
-              $$\\Delta = 3^2 - 4 \\times 1 \\times (-10) = 9 + 40 = 49.$$ 
-            </li>
+              $$\\Delta = 3^2 - 4 \\times 1 \\times (-10) = 9 + 40 = 49.$$</li>
             <li>Solve: 
-              $$x = \\frac{-3 \\pm \\sqrt{49}}{2} = \\frac{-3 \\pm 7}{2}.$$ 
-            </li>
+              $$x = \\frac{-3 \\pm \\sqrt{49}}{2} = \\frac{-3 \\pm 7}{2}.$$</li>
             <li>Thus, $$x = 2$$ or $$x = -5.$$</li>
+          </ol>
+        </div>
+        <div class="example">
+          <h3>Example 4: Complex Roots</h3>
+          <p>Solve $$x^2 + 2x + 5 = 0.$$</p>
+          <ol>
+            <li>Coefficients: $$a = 1, b = 2, c = 5$$.</li>
+            <li>Discriminant: 
+              $$\\Delta = 2^2 - 4 \\times 1 \\times 5 = 4 - 20 = -16.$$</li>
+            <li>Since $$\\Delta < 0$$, the solutions are complex:
+              $$x = \\frac{-2 \\pm \\sqrt{-16}}{2} = \\frac{-2 \\pm 4i}{2} = -1 \\pm 2i.$$</li>
           </ol>
         </div>
         <p><strong>Additional Tips:</strong></p>
         <ul>
           <li>If $$\\Delta > 0$$, there are two distinct real roots.</li>
-          <li>If $$\\Delta = 0$$, there is one real (repeated) root.</li>
+          <li>If $$\\Delta = 0$$, there is one repeated real root.</li>
           <li>If $$\\Delta < 0$$, the solutions are complex numbers.</li>
         </ul>
       </div>
@@ -1454,6 +1464,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - 1) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Identify coefficients:</em> $$a = 2,\\; b = 4,\\; c = -6.$$</li>
+            <li><em>Compute the discriminant:</em> $$\\Delta = 4^2 - 4\\times2\\times(-6) = 16 + 48 = 64.$$</li>
+            <li><em>Substitute into the formula:</em> $$x = \\frac{-4 \\pm \\sqrt{64}}{4} = \\frac{-4 \\pm 8}{4}.$$</li>
+            <li><em>Simplify:</em> Hence, $$x = 1$$ or $$x = -3.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "2. Using the quadratic formula, solve x² - 4x - 5 = 0.",
@@ -1465,6 +1486,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -1) < 0.1 && Math.abs(parts[1] - 5) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 1,\\; b = -4,\\; c = -5.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = (-4)^2 - 4\\times1\\times(-5) = 16+20=36.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{4 \\pm 6}{2}.$$</li>
+            <li><em>Simplify:</em> Thus, $$x = 5$$ or $$x = -1.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "3. Solve 3x² + 6x + 2 = 0 using the quadratic formula.",
@@ -1472,6 +1504,17 @@ const quizzes = {
       check: (ans) =>
         ans.replace(/\s+/g, "").toLowerCase().includes("-1") &&
         ans.includes("√"),
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 3,\\; b = 6,\\; c = 2.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = 6^2 - 4\\times3\\times2 = 36 - 24 = 12.$$</li>
+            <li><em>Simplify:</em> $$\\sqrt{12} = 2\\sqrt{3}.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{-6 \\pm 2\\sqrt{3}}{6} = -1 \\pm \\frac{\\sqrt{3}}{3}.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "4. Solve x² - 2x - 8 = 0 using the quadratic formula.",
@@ -1483,6 +1526,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -2) < 0.1 && Math.abs(parts[1] - 4) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 1,\\; b = -2,\\; c = -8.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = (-2)^2 - 4\\times1\\times(-8) = 4+32=36.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{2 \\pm 6}{2}.$$</li>
+            <li><em>Simplify:</em> Hence, $$x = 4$$ or $$x = -2.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "5. Solve 5x² + 3x - 2 = 0 using the quadratic formula.",
@@ -1494,11 +1548,33 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -1) < 0.1 && Math.abs(parts[1] - 0.4) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 5,\\; b = 3,\\; c = -2.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = 3^2 - 4\\times5\\times(-2)=9+40=49.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{-3 \\pm 7}{10}.$$</li>
+            <li><em>Simplify:</em> Thus, $$x = 0.4$$ or $$x = -1.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "6. Solve 4x² - 12x + 9 = 0.",
       answer: "x = 1.5",
       check: (ans) => Math.abs(parseFloat(ans) - 1.5) < 0.1,
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 4,\\; b = -12,\\; c = 9.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = (-12)^2 - 4\\times4\\times9 = 144-144=0.$$</li>
+            <li><em>Since $$\\Delta = 0$$:</em> There is one repeated root:
+              $$x = \\frac{12}{8} = 1.5.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "7. Solve x² + 2x - 15 = 0 using the quadratic formula.",
@@ -1510,6 +1586,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -5) < 0.1 && Math.abs(parts[1] - 3) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 1,\\; b = 2,\\; c = -15.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = 2^2 - 4\\times1\\times(-15)=4+60=64.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{-2 \\pm 8}{2}.$$</li>
+            <li><em>Simplify:</em> Therefore, $$x = 3$$ or $$x = -5.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "8. Solve 2x² - 5x + 2 = 0 using the quadratic formula.",
@@ -1521,6 +1608,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - 0.5) < 0.1 && Math.abs(parts[1] - 2) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 2,\\; b = -5,\\; c = 2.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = (-5)^2 - 4\\times2\\times2=25-16=9.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{5 \\pm 3}{4}.$$</li>
+            <li><em>Simplify:</em> Hence, $$x = 2$$ or $$x = 0.5.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "9. Solve 7x² + 14x - 21 = 0 using the quadratic formula.",
@@ -1532,6 +1630,17 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - 1) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 7,\\; b = 14,\\; c = -21.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = 14^2 - 4\\times7\\times(-21)=196+588=784.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{-14 \\pm \\sqrt{784}}{14} = \\frac{-14 \\pm 28}{14}.$$</li>
+            <li><em>Simplify:</em> So, $$x = 1$$ or $$x = -3.$$</li>
+          </ol>
+        </div>
+      `,
     },
     {
       question: "10. Using the quadratic formula, solve x² + 3x + 2 = 0.",
@@ -1543,6 +1652,88 @@ const quizzes = {
           .sort((a, b) => a - b);
         return Math.abs(parts[0] - -2) < 0.1 && Math.abs(parts[1] - -1) < 0.1;
       },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Coefficients:</em> $$a = 1,\\; b = 3,\\; c = 2.$$</li>
+            <li><em>Discriminant:</em> $$\\Delta = 3^2 - 4\\times1\\times2 = 9 - 8 = 1.$$</li>
+            <li><em>Formula:</em> $$x = \\frac{-3 \\pm 1}{2}.$$</li>
+            <li><em>Simplify:</em> Therefore, $$x = -1$$ or $$x = -2.$$</li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question: "11. Solve the non-standard equation: Solve $$x^2 = 5x + 24$$.",
+      answer: [8, -3],
+      check: (ans) => {
+        let parts = ans
+          .split(",")
+          .map((s) => parseFloat(s.trim()))
+          .sort((a, b) => a - b);
+        return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - 8) < 0.1;
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Rearrange:</em> Subtract 5x + 24 from both sides to obtain: $$x^2 - 5x - 24 = 0.$$</li>
+            <li><em>Factorise:</em> The quadratic factors as: $$(x - 8)(x + 3) = 0.$$</li>
+            <li><em>Solution:</em> Thus, $$x = 8$$ or $$x = -3.$$</li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question: `12. Evaluate the following expressions:
+(a) Write down the value of $$7^0$$.
+(b) Find the value of $$3^6 \\times 3^{-6}$$.
+(c) Find the value of $$2^{-4}$$.
+(d) Find the value of $$27^{1/3}$$.
+(Enter your answers separated by commas.)`,
+      answer: [1, 1, 0.0625, 3],
+      check: (ans) => {
+        let parts = ans.split(",").map((s) => parseFloat(s.trim()));
+        return (
+          Math.abs(parts[0] - 1) < 0.001 &&
+          Math.abs(parts[1] - 1) < 0.001 &&
+          Math.abs(parts[2] - 0.0625) < 0.001 &&
+          Math.abs(parts[3] - 3) < 0.001
+        );
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li>(a) Any nonzero number raised to the power 0 equals 1, so $$7^0 = 1.$$</li>
+            <li>(b) Using the exponent rule, $$3^6 \\times 3^{-6} = 3^{6-6} = 3^0 = 1.$$</li>
+            <li>(c) A negative exponent indicates the reciprocal: $$2^{-4} = \\frac{1}{2^4} = \\frac{1}{16} = 0.0625.$$</li>
+            <li>(d) The cube root of 27 is 3, so $$27^{1/3} = 3.$$</li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question: `13. The curve C has equation $$y = x^2 + 3x - 3$$ and the line L has equation $$y - 5x + 4 = 0$$.
+Show, algebraically, that C and L have exactly one point in common.
+(Provide your reasoning in words.)`,
+      answer: "The discriminant is 0",
+      check: (ans) => {
+        let lower = ans.toLowerCase();
+        return lower.includes("discriminant") && lower.includes("0");
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li>Write the line in standard form: $$y = 5x - 4.$$</li>
+            <li>Substitute into the curve: $$5x - 4 = x^2 + 3x - 3.$$</li>
+            <li>Simplify to obtain: $$x^2 - 2x + 1 = 0,$$ which factors as $$(x-1)^2 = 0.$$</li>
+            <li>This shows that there is one repeated solution, meaning the discriminant is 0 and the line touches the curve at exactly one point.</li>
+          </ol>
+        </div>
+      `,
     },
   ],
   completingTheSquare: [
@@ -2991,7 +3182,7 @@ function addGraphStyles() {
   document.head.appendChild(style);
 }
 
-const enabledTopics = ["compound"];
+const enabledTopics = ["compound", "quadraticEquation"];
 
 // Navigation event listeners
 document.addEventListener("DOMContentLoaded", function () {

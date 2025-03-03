@@ -1,3 +1,23 @@
+const modelAnswers = `
+        <button class="btn btn-secondary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#pdfViewer" aria-expanded="false" aria-controls="pdfViewer">
+          Show Model Answers
+        </button>
+        <div class="collapse mt-2" id="pdfViewer">
+          <div class="card card-body">
+            <!-- Scrollable container for the PDF page -->
+            <div id="pdf-container" style="max-height: 600px; overflow-y: auto;">
+              <canvas id="pdf-canvas" style="width: 100%; border: 1px solid #ddd;"></canvas>
+            </div>
+            <!-- Navigation controls -->
+            <div id="pdf-navigation" class="mt-2 text-center" style="display: none;">
+              <button class="btn btn-sm btn-outline-secondary" onclick="prevPage()">Previous</button>
+              <span id="pdf-page-display" class="mx-2"></span>
+              <button class="btn btn-sm btn-outline-primary" onclick="nextPage()">Next</button>
+            </div>
+          </div>
+        </div>
+`;
+
 const lessons = {
   compound: {
     title: "Compound Interest, Depreciation & Profits",
@@ -276,26 +296,7 @@ const lessons = {
               Compound Interest (H) Questions by Topic
             </a>
           </p>
-        <!-- Button to toggle the PDF viewer for model answers -->
-        <button class="btn btn-secondary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#pdfViewer" aria-expanded="false" aria-controls="pdfViewer">
-          Show Model Answers
-        </button>
-
-        <!-- Collapsible PDF viewer container -->
-        <div class="collapse mt-2" id="pdfViewer">
-          <div class="card card-body">
-            <!-- Scrollable container for the PDF page -->
-            <div id="pdf-container" style="max-height: 600px; overflow-y: auto;">
-              <canvas id="pdf-canvas" style="width: 100%; border: 1px solid #ddd;"></canvas>
-            </div>
-            <!-- Navigation controls -->
-            <div id="pdf-navigation" class="mt-2 text-center" style="display: none;">
-              <button class="btn btn-sm btn-outline-secondary" onclick="prevPage()">Previous</button>
-              <span id="pdf-page-display" class="mx-2"></span>
-              <button class="btn btn-sm btn-outline-primary" onclick="nextPage()">Next</button>
-            </div>
-          </div>
-        </div>
+        ${modelAnswers}
         </div>
       `,
   },
@@ -465,6 +466,8 @@ const lessons = {
           <li>If $$\\Delta = 0$$, there is one repeated real root.</li>
           <li>If $$\\Delta < 0$$, the solutions are complex numbers.</li>
         </ul>
+
+      ${modelAnswers}
       </div>
     `,
   },
@@ -474,68 +477,243 @@ const lessons = {
       <div class="lesson">
         <h2>Completing the Square</h2>
         <p>
-          <strong>Overview:</strong> Completing the square transforms a quadratic equation in the form 
-          $$ax^2 + bx + c = 0$$ 
-          into a perfect square trinomial. This method is useful not only for solving the equation but also for rewriting the quadratic function in vertex form for graphing.
+          <strong>Overview:</strong> Completing the square transforms a quadratic expression of the form 
+          $$ax^2 + bx + c$$ 
+          into a perfect square trinomial. This method is useful for solving quadratic equations and for rewriting quadratic functions in vertex form, which helps in graphing by clearly identifying the vertex and intercepts.
         </p>
         <p><strong>Step-by-Step Method:</strong></p>
         <ol>
-          <li><em>Write in standard form:</em> Ensure the equation is $$ax^2 + bx + c = 0.$$</li>
-          <li><em>If necessary, divide by $a$:</em> If $a \\neq 1$, divide every term by $a$ so that the coefficient of $x^2$ becomes 1.</li>
-          <li><em>Isolate the $x$-terms:</em> Rewrite as $$x^2 + \\frac{b}{a}x = -\\frac{c}{a}.$$</li>
-          <li><em>Find half the coefficient of $x$:</em> Let $$d = \\frac{b}{2a}$$ and compute $$d^2.$$</li>
-          <li><em>Add and subtract $d^2$:</em> Write 
-            $$x^2 + \\frac{b}{a}x + d^2 - d^2 = -\\frac{c}{a}.$$</li>
-          <li><em>Rewrite the equation:</em> Express the left side as a perfect square: 
-            $$ (x + d)^2 - d^2 = -\\frac{c}{a}.$$ 
-          </li>
-          <li><em>Solve for $x$:</em> Rearrange to 
-            $$ (x + d)^2 = d^2 - \\frac{c}{a},$$ 
-            take the square root of both sides, and solve for $x$.
-          </li>
+          <li><em>Write in standard form:</em> Ensure the equation is written as $$ax^2 + bx + c = 0$$ (for solving) or as a function $$ax^2 + bx + c$$ (for graphing).</li>
+          <li><em>If necessary, divide by $$a$$:</em> When $$a \\neq 1$$, divide every term by $$a$$ so that the coefficient of $$x^2$$ is 1.</li>
+          <li><em>Isolate the $$x$$-terms:</em> Rewrite the equation as $$x^2 + \\frac{b}{a}x = -\\frac{c}{a}$$ (for solving) or separate the constant term for graphing.</li>
+          <li><em>Find half the coefficient of $$x$$:</em> Let $$d = \\frac{b}{2a}$$ and compute $$d^2.$$ This value is added and subtracted to complete the square.</li>
+          <li><em>Add and subtract $$d^2$$:</em> Adjust the equation by adding and subtracting $$d^2$$ so that the left side becomes a perfect square trinomial.</li>
+          <li><em>Rewrite as a perfect square:</em> Express the quadratic part as $$ (x + d)^2$$ or $$ (x - d)^2$$ if $$d$$ is negative), then adjust the constant term.</li>
+          <li><em>Solve or analyze:</em> For equations, set the perfect square equal to the adjusted constant and solve for $$x$$. For graphing, rewrite in vertex form as $$a(x + d)^2 + k$$ so that the vertex is at $$(-d, k)$$.</li>
         </ol>
+        <hr />
         <div class="example">
-          <h3>Example 1</h3>
-          <p>Solve $$x^2 + 6x + 5 = 0$$ by completing the square:</p>
+          <h3>Example 1: Solving by Completing the Square (Simple Equation)</h3>
+          <p>Solve $$x^2 + 6x + 5 = 0$$ by completing the square.</p>
           <ol>
-            <li>Rearrange: $$x^2 + 6x = -5.$$</li>
-            <li>Half of 6 is 3, so $$d = 3$$ and $$d^2 = 9.$$</li>
-            <li>Add and subtract 9: $$x^2 + 6x + 9 = 9 - 5.$$</li>
-            <li>Rewrite as: $$ (x + 3)^2 = 4.$$</li>
-            <li>Take the square root: $$x + 3 = \\pm 2,$$ hence $$x = -1$$ or $$x = -5.$$</li>
+            <li>
+              <strong>Isolate the $$x$$-terms:</strong>
+              <br />Rewrite the equation as 
+              $$x^2 + 6x = -5.$$ 
+              This moves the constant term to the right side.
+            </li>
+            <li>
+              <strong>Find half the coefficient of $$x$$:</strong>
+              <br />Half of 6 is 3, so let $$d = 3$$ and compute 
+              $$d^2 = 9.$$ 
+            </li>
+            <li>
+              <strong>Add and subtract $$d^2$$:</strong>
+              <br />Add and subtract 9 on the left side:
+              $$x^2 + 6x + 9 = 9 - 5.$$ 
+              This creates a perfect square trinomial.
+            </li>
+            <li>
+              <strong>Rewrite as a perfect square:</strong>
+              <br />The left side factors as 
+              $$ (x + 3)^2,$$ 
+              so the equation becomes 
+              $$ (x + 3)^2 = 4.$$ 
+            </li>
+            <li>
+              <strong>Solve for $$x$$:</strong>
+              <br />Take the square root of both sides:
+              $$x + 3 = \\pm 2,$$ 
+              then solve to obtain 
+              $$x = -3 \\pm 2,$$ which gives the solutions 
+              $$x = -1$$ and $$x = -5.$$ 
+            </li>
           </ol>
         </div>
+        <hr />
         <div class="example">
-          <h3>Example 2</h3>
-          <p>Solve $$3x^2 - 12x + 7 = 0$$ by completing the square:</p>
+          <h3>Example 2: Solving a Quadratic Equation with a Leading Coefficient ≠ 1</h3>
+          <p>Solve $$3x^2 - 12x + 7 = 0$$ by completing the square.</p>
           <ol>
-            <li>Divide by 3: $$x^2 - 4x + \\frac{7}{3} = 0.$$</li>
-            <li>Rearrange: $$x^2 - 4x = -\\frac{7}{3}.$$</li>
-            <li>Half of $-4$ is $-2$, so $$d = -2$$ and $$d^2 = 4.$$</li>
-            <li>Add and subtract 4: $$x^2 - 4x + 4 = 4 - \\frac{7}{3}.$$</li>
-            <li>Simplify: $$4 - \\frac{7}{3} = \\frac{5}{3}.$$</li>
-            <li>Rewrite as: $$ (x - 2)^2 = \\frac{5}{3}.$$</li>
-            <li>Take square roots: $$x - 2 = \\pm \\sqrt{\\frac{5}{3}},$$ hence $$x = 2 \\pm \\sqrt{\\frac{5}{3}}.$$</li>
+            <li>
+              <strong>Divide by the leading coefficient:</strong>
+              <br />Divide the equation by 3:
+              $$x^2 - 4x + \\frac{7}{3} = 0.$$ 
+            </li>
+            <li>
+              <strong>Isolate the $$x$$-terms:</strong>
+              <br />Rewrite as 
+              $$x^2 - 4x = -\\frac{7}{3}.$$ 
+            </li>
+            <li>
+              <strong>Find half the coefficient of $$x$$:</strong>
+              <br />Half of -4 is -2, so let $$d = -2$$ and compute 
+              $$d^2 = 4.$$ 
+            </li>
+            <li>
+              <strong>Add and subtract $$d^2$$:</strong>
+              <br />Add and subtract 4:
+              $$x^2 - 4x + 4 = 4 - \\frac{7}{3}.$$ 
+            </li>
+            <li>
+              <strong>Simplify the constant:</strong>
+              <br />Evaluate 
+              $$4 - \\frac{7}{3} = \\frac{12}{3} - \\frac{7}{3} = \\frac{5}{3}.$$ 
+            </li>
+            <li>
+              <strong>Rewrite as a perfect square:</strong>
+              <br />The left side factors as 
+              $$ (x - 2)^2,$$ 
+              so the equation becomes 
+              $$ (x - 2)^2 = \\frac{5}{3}.$$ 
+            </li>
+            <li>
+              <strong>Solve for $$x$$:</strong>
+              <br />Take the square root:
+              $$x - 2 = \\pm \\sqrt{\\frac{5}{3}},$$ 
+              hence 
+              $$x = 2 \\pm \\sqrt{\\frac{5}{3}}.$$ 
+            </li>
           </ol>
         </div>
+        <hr />
         <div class="example">
-          <h3>Example 3</h3>
-          <p>Solve $$2x^2 + 8x + 6 = 0$$ by completing the square:</p>
+          <h3>Example 3: Solving with Division and Completing the Square</h3>
+          <p>Solve $$2x^2 + 8x + 6 = 0$$ by completing the square.</p>
           <ol>
-            <li>Divide by 2: $$x^2 + 4x + 3 = 0.$$</li>
-            <li>Rearrange: $$x^2 + 4x = -3.$$</li>
-            <li>Half of 4 is 2, so $$d = 2$$ and $$d^2 = 4.$$</li>
-            <li>Add and subtract 4: $$x^2 + 4x + 4 = 4 - 3.$$</li>
-            <li>Rewrite as: $$ (x + 2)^2 = 1.$$</li>
-            <li>Take the square root: $$x + 2 = \\pm 1,$$ so $$x = -1$$ or $$x = -3.$$</li>
+            <li>
+              <strong>Divide by the leading coefficient:</strong>
+              <br />Divide the equation by 2:
+              $$x^2 + 4x + 3 = 0.$$ 
+            </li>
+            <li>
+              <strong>Isolate the $$x$$-terms:</strong>
+              <br />Rewrite as 
+              $$x^2 + 4x = -3.$$ 
+            </li>
+            <li>
+              <strong>Find half the coefficient of $$x$$:</strong>
+              <br />Half of 4 is 2, so let $$d = 2$$ and compute 
+              $$d^2 = 4.$$ 
+            </li>
+            <li>
+              <strong>Add and subtract $$d^2$$:</strong>
+              <br />Add and subtract 4:
+              $$x^2 + 4x + 4 = 4 - 3.$$ 
+            </li>
+            <li>
+              <strong>Rewrite as a perfect square:</strong>
+              <br />The left side factors as 
+              $$ (x + 2)^2,$$ 
+              yielding 
+              $$ (x + 2)^2 = 1.$$ 
+            </li>
+            <li>
+              <strong>Solve for $$x$$:</strong>
+              <br />Take the square root:
+              $$x + 2 = \\pm 1,$$ 
+              so 
+              $$x = -2 \\pm 1,$$ resulting in 
+              $$x = -1$$ or $$x = -3.$$ 
+            </li>
+          </ol>
+        </div>
+        <hr />
+        <div class="example">
+          <h3>Example 4: Converting to Vertex Form for Graphing</h3>
+          <p>Rewrite the quadratic function $$y = 2x^2 - 8x - 5$$ in vertex form by completing the square, and determine the vertex and intercepts.</p>
+          <ol>
+            <li>
+              <strong>Factor out the coefficient of $$x^2$$:</strong>
+              <br />Since the coefficient is 2, factor it from the $$x$$-terms:
+              $$y = 2(x^2 - 4x) - 5.$$ 
+            </li>
+            <li>
+              <strong>Find half the coefficient of $$x$$:</strong>
+              <br />Inside the parentheses, half of -4 is -2, so let $$d = -2$$ and compute 
+              $$d^2 = 4.$$ 
+            </li>
+            <li>
+              <strong>Add and subtract the square:</strong>
+              <br />Rewrite as:
+              $$y = 2(x^2 - 4x + 4 - 4) - 5.$$ 
+            </li>
+            <li>
+              <strong>Rewrite as a perfect square:</strong>
+              <br />Express the quadratic inside as a perfect square:
+              $$y = 2[(x - 2)^2 - 4] - 5.$$ 
+            </li>
+            <li>
+              <strong>Simplify the expression:</strong>
+              <br />Distribute and combine constants:
+              $$y = 2(x - 2)^2 - 8 - 5 = 2(x - 2)^2 - 13.$$ 
+            </li>
+            <li>
+              <strong>Determine the vertex:</strong>
+              <br />The vertex form is $$y = 2(x - 2)^2 - 13,$$ so the vertex is 
+              $$(2, -13).$$ 
+            </li>
+            <li>
+              <strong>Find the intercepts:</strong>
+              <br /><em>y-intercept:</em> Substitute $$x = 0$$ into the original equation:
+              $$y = 2(0)^2 - 8(0) - 5 = -5.$$ 
+              <br /><em>x-intercepts:</em> Set $$y = 0$$ in the vertex form:
+              $$0 = 2(x - 2)^2 - 13 \\Rightarrow 2(x - 2)^2 = 13 \\Rightarrow (x - 2)^2 = \\frac{13}{2}.$$ 
+              <br />Thus, 
+              $$x = 2 \\pm \\sqrt{\\frac{13}{2}}.$$ 
+            </li>
+          </ol>
+        </div>
+        <hr />
+        <div class="example">
+          <h3>Example 5: Finding the Turning Point</h3>
+          <p>Determine the coordinates of the turning point of the quadratic function 
+          $$y = 9 + 18x - 3x^2$$ by completing the square.</p>
+          <ol>
+            <li>
+              <strong>Rewrite in standard form:</strong>
+              <br />Reorder the function as 
+              $$y = -3x^2 + 18x + 9.$$ 
+            </li>
+            <li>
+              <strong>Factor out the coefficient of $$x^2$$:</strong>
+              <br />Factor -3 from the terms involving $$x$$:
+              $$y = -3(x^2 - 6x) + 9.$$ 
+            </li>
+            <li>
+              <strong>Find half the coefficient of $$x$$:</strong>
+              <br />Inside the parentheses, half of -6 is -3, so let $$d = -3$$ and compute 
+              $$d^2 = 9.$$ 
+            </li>
+            <li>
+              <strong>Add and subtract the square:</strong>
+              <br />Rewrite as:
+              $$y = -3(x^2 - 6x + 9 - 9) + 9.$$ 
+            </li>
+            <li>
+              <strong>Rewrite as a perfect square:</strong>
+              <br />Express the trinomial as a perfect square:
+              $$y = -3[(x - 3)^2 - 9] + 9.$$ 
+            </li>
+            <li>
+              <strong>Simplify to vertex form:</strong>
+              <br />Distribute -3 and combine constants:
+              $$y = -3(x - 3)^2 + 27 + 9 = -3(x - 3)^2 + 36.$$ 
+            </li>
+            <li>
+              <strong>Identify the turning point:</strong>
+              <br />The vertex (turning point) is 
+              $$(3, 36).$$ 
+            </li>
           </ol>
         </div>
         <p><strong>Additional Tips:</strong></p>
         <ul>
-          <li>Ensure the equation remains balanced when adding and subtracting $$d^2$$.</li>
-          <li>This method is also useful for converting a quadratic function to vertex form, $$a(x + d)^2 + k,$$ revealing the vertex of the parabola.</li>
-          <li>Double-check by expanding the perfect square to verify it matches the original $x$-terms.</li>
+          <li>Always keep the equation balanced when adding and subtracting $$d^2$$.</li>
+          <li>This method is versatile: use it for solving equations or converting quadratic functions to vertex form for graphing.</li>
+          <li>Double-check your work by expanding the perfect square to ensure it matches the original expression.</li>
         </ul>
+      ${modelAnswers}
       </div>
     `,
   },
@@ -3163,8 +3341,8 @@ function retypesetMath() {
 // Mapping each topic to its PDF file
 const pdfFiles = {
   compound: "pdfs/compound.pdf",
-  quadraticEquation: "pdfs/quadratic.pdf",
-  inequalities: "pdfs/inequalities.pdf",
+  quadraticEquation: "pdfs/quadraticEquation.pdf",
+  completingTheSquare: "pdfs/completingTheSquare.pdf",
   // Add more topics as needed...
 };
 
@@ -3275,7 +3453,7 @@ function addGraphStyles() {
   document.head.appendChild(style);
 }
 
-const enabledTopics = ["compound", "quadraticEquation"];
+const enabledTopics = ["compound", "quadraticEquation", "completingTheSquare"];
 
 // Navigation event listeners
 document.addEventListener("DOMContentLoaded", function () {

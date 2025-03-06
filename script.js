@@ -301,7 +301,7 @@ const lessons = {
       `,
   },
   quadraticEquation: {
-    title: "Quadratic Equations (Quadratic Formula)",
+    title: "Solving Quadratic Equations",
     content: `
       <div class="lesson">
         <h2>Quadratic Equations: Quadratic Formula</h2>
@@ -456,6 +456,221 @@ const lessons = {
               <br />
               $$x = \\frac{-b \\pm \\sqrt{\\Delta}}{2a} = \\frac{-2 \\pm \\sqrt{-16}}{2} = \\frac{-2 \\pm 4i}{2} = -1 \\pm 2i.$$ 
               Here, $$\\sqrt{-16} = 4i.$$
+            </li>
+          </ol>
+        </div>
+        
+        <h2>Solving by Factoring/Factorising</h2>
+        <p>
+          <strong>Definition:</strong> Factoring involves rewriting the quadratic expression as a product of two binomials.
+          When the product equals zero, either (or both) of the factors must be zero.
+        </p>
+        <p><strong>Step-by-Step Method:</strong></p>
+        <ol>
+          <li><em>Write in standard form:</em> Ensure the equation is in the form $$ax^2 + bx + c = 0.$$</li>
+          <li><em>Factor the expression:</em> Find factors $$p$$ and $$q$$ such that $$ax^2 + bx + c = (dx + p)(ex + q)$$, where $$de = a$$ and $$p \\cdot q = c$$ and $$p \\cdot e + q \\cdot d = b$$.</li>
+          <li><em>Apply the zero product property:</em> If $$(dx + p)(ex + q) = 0$$, then either $$dx + p = 0$$ or $$ex + q = 0$$ (or both).</li>
+          <li><em>Solve each factor:</em> Solve the resulting linear equations $$dx + p = 0$$ and $$ex + q = 0$$ to find all solutions.</li>
+        </ol>
+        
+        <div class="example">
+          <h3>Example 1: Factoring with Integer Roots</h3>
+          <p>Solve $$x^2 - 5x + 6 = 0.$$</p>
+          <ol>
+            <li>
+              <strong>Write in standard form:</strong> 
+              <br />
+              The equation $$x^2 - 5x + 6 = 0$$ is already in standard form $$ax^2 + bx + c = 0,$$ 
+              where $$a = 1, b = -5, c = 6.$$ 
+            </li>
+            <li>
+              <strong>Factor the expression:</strong> 
+              <br />
+              We need to find factors $$p$$ and $$q$$ such that $$p \cdot q = 6$$ and $$p + q = 5$$.
+              <br />
+              The factors of 6 are: 1 and 6, 2 and 3.
+              <br />
+              Checking: 1 + 6 = 7, 2 + 3 = 5.
+              <br />
+              Since 2 + 3 = 5, we use $$p = 2$$ and $$q = 3$$.
+              <br />
+              Therefore, $$x^2 - 5x + 6 = (x - 2)(x - 3)$$.
+            </li>
+            <li>
+              <strong>Apply the zero product property:</strong> 
+              <br />
+              $$(x - 2)(x - 3) = 0$$ implies either $$x - 2 = 0$$ or $$x - 3 = 0$$.
+            </li>
+            <li>
+              <strong>Solve each factor:</strong> 
+              <br />
+              From $$x - 2 = 0$$, we get $$x = 2$$.
+              <br />
+              From $$x - 3 = 0$$, we get $$x = 3$$.
+              <br />
+              Therefore, the solutions are $$x = 2$$ and $$x = 3$$.
+            </li>
+          </ol>
+        </div>
+        
+        <div class="example">
+          <h3>Example 2: Factoring with a Leading Coefficient</h3>
+          <p>Solve $$2x^2 + 7x + 3 = 0.$$</p>
+          <ol>
+            <li>
+              <strong>Write in standard form:</strong> 
+              <br />
+              The equation $$2x^2 + 7x + 3 = 0$$ is already in standard form $$ax^2 + bx + c = 0,$$ 
+              where $$a = 2, b = 7, c = 3.$$ 
+            </li>
+            <li>
+              <strong>Factor the expression:</strong> 
+              <br />
+              Since $$a = 2$$, we look for factors in the form $$(2x + p)(x + q)$$ or $$(x + p)(2x + q)$$.
+              <br />
+              We need $$p \\cdot q = 3$$ and $$2q + p = 7$$ (or $$q + 2p = 7$$).
+              <br />
+              The factors of 3 are: 1 and 3.
+              <br />
+              Let's try $$(2x + 3)(x + 1)$$:
+              <br />
+              Here, $$p = 3$$ and $$q = 1$$, so $$2q + p = 2 \\cdot 1 + 3 = 5$$, which doesn't equal 7.
+              <br />
+              Let's try $$(2x + 1)(x + 3)$$:
+              <br />
+              Here, $$p = 1$$ and $$q = 3$$, so $$2q + p = 2 \\cdot 3 + 1 = 7$$, which equals 7!
+              <br />
+              Therefore, $$2x^2 + 7x + 3 = (2x + 1)(x + 3)$$.
+            </li>
+            <li>
+              <strong>Apply the zero product property:</strong> 
+              <br />
+              $$(2x + 1)(x + 3) = 0$$ implies either $$2x + 1 = 0$$ or $$x + 3 = 0$$.
+            </li>
+            <li>
+              <strong>Solve each factor:</strong> 
+              <br />
+              From $$2x + 1 = 0$$, we get $$x = -\\frac{1}{2}$$.
+              <br />
+              From $$x + 3 = 0$$, we get $$x = -3$$.
+              <br />
+              Therefore, the solutions are $$x = -\\frac{1}{2}$$ and $$x = -3$$.
+            </li>
+          </ol>
+        </div>
+        
+        <h2>Completing the Square</h2>
+        <p>
+          <strong>Definition:</strong> Completing the square transforms a quadratic expression into the form $$a(x + p)^2 + q$$,
+          which makes it easier to find the roots and other properties of the quadratic function.
+        </p>
+        <p><strong>Step-by-Step Method:</strong></p>
+        <ol>
+          <li><em>Ensure the leading coefficient is 1:</em> If $$a \\neq 1$$, divide the entire equation by $$a$$ first.</li>
+          <li><em>Rearrange to isolate the variable terms:</em> Move the constant term to the right side of the equation.</li>
+          <li><em>Complete the square:</em> Add and subtract $$\\left(\\frac{b}{2}\\right)^2$$ to the left side to form a perfect square trinomial.</li>
+          <li><em>Rewrite as a squared binomial:</em> Express the left side as $$(x + \\frac{b}{2})^2$$.</li>
+          <li><em>Solve for the variable:</em> Take the square root of both sides and solve for $$x$$.</li>
+        </ol>
+        
+        <div class="example">
+          <h3>Example 1: Completing the Square with Leading Coefficient 1</h3>
+          <p>Solve $$x^2 + 6x + 8 = 0.$$</p>
+          <ol>
+            <li>
+              <strong>Ensure the leading coefficient is 1:</strong> 
+              <br />
+              The leading coefficient is already 1, so no need to divide.
+            </li>
+            <li>
+              <strong>Rearrange to isolate the variable terms:</strong> 
+              <br />
+              $$x^2 + 6x = -8$$
+            </li>
+            <li>
+              <strong>Complete the square:</strong> 
+              <br />
+              For the term $$x^2 + 6x$$, calculate $$\\left(\\frac{b}{2}\\right)^2 = \\left(\\frac{6}{2}\\right)^2 = 3^2 = 9$$.
+              <br />
+              Add and subtract this value on the left side:
+              <br />
+              $$x^2 + 6x + 9 - 9 = -8$$
+              <br />
+              $$x^2 + 6x + 9 = -8 + 9$$
+              <br />
+              $$x^2 + 6x + 9 = 1$$
+            </li>
+            <li>
+              <strong>Rewrite as a squared binomial:</strong> 
+              <br />
+              $$x^2 + 6x + 9 = (x + 3)^2$$
+              <br />
+              Therefore, $$(x + 3)^2 = 1$$
+            </li>
+            <li>
+              <strong>Solve for the variable:</strong> 
+              <br />
+              Take the square root of both sides:
+              <br />
+              $$x + 3 = \\pm 1$$
+              <br />
+              $$x = -3 \\pm 1$$
+              <br />
+              $$x = -2$$ or $$x = -4$$
+              <br />
+              Therefore, the solutions are $$x = -2$$ and $$x = -4$$.
+            </li>
+          </ol>
+        </div>
+        
+        <div class="example">
+          <h3>Example 2: Completing the Square with Leading Coefficient Not 1</h3>
+          <p>Solve $$2x^2 - 12x + 10 = 0.$$</p>
+          <ol>
+            <li>
+              <strong>Ensure the leading coefficient is 1:</strong> 
+              <br />
+              Divide all terms by 2:
+              <br />
+              $$x^2 - 6x + 5 = 0$$
+            </li>
+            <li>
+              <strong>Rearrange to isolate the variable terms:</strong> 
+              <br />
+              $$x^2 - 6x = -5$$
+            </li>
+            <li>
+              <strong>Complete the square:</strong> 
+              <br />
+              For the term $$x^2 - 6x$$, calculate $$\\left(\\frac{b}{2}\\right)^2 = \\left(\\frac{-6}{2}\\right)^2 = (-3)^2 = 9$$.
+              <br />
+              Add and subtract this value on the left side:
+              <br />
+              $$x^2 - 6x + 9 - 9 = -5$$
+              <br />
+              $$x^2 - 6x + 9 = -5 + 9$$
+              <br />
+              $$x^2 - 6x + 9 = 4$$
+            </li>
+            <li>
+              <strong>Rewrite as a squared binomial:</strong> 
+              <br />
+              $$x^2 - 6x + 9 = (x - 3)^2$$
+              <br />
+              Therefore, $$(x - 3)^2 = 4$$
+            </li>
+            <li>
+              <strong>Solve for the variable:</strong> 
+              <br />
+              Take the square root of both sides:
+              <br />
+              $$x - 3 = \\pm 2$$
+              <br />
+              $$x = 3 \\pm 2$$
+              <br />
+              $$x = 5$$ or $$x = 1$$
+              <br />
+              Therefore, the solutions are $$x = 5$$ and $$x = 1$$.
             </li>
           </ol>
         </div>
@@ -1947,73 +2162,153 @@ const quizzes = {
       `,
     },
     {
-      question: "7. Solve x² + 2x - 15 = 0 using the quadratic formula.",
-      answer: [3, -5],
+      question: "7. Solve x² - 5x + 6 = 0 by factoring. Show your work.",
+      answer: [2, 3],
       check: (ans) => {
         let parts = ans
           .split(",")
           .map((s) => parseFloat(s.trim()))
           .sort((a, b) => a - b);
-        return Math.abs(parts[0] - -5) < 0.1 && Math.abs(parts[1] - 3) < 0.1;
+        return Math.abs(parts[0] - 2) < 0.1 && Math.abs(parts[1] - 3) < 0.1;
       },
       solution: `
         <div class="example">
           <h3>Step-by-Step Explanation</h3>
           <ol>
-            <li><em>Coefficients:</em> $$a = 1,\\; b = 2,\\; c = -15.$$</li>
-            <li><em>Discriminant:</em> $$\\Delta = 2^2 - 4\\times1\\times(-15)=4+60=64.$$</li>
-            <li><em>Formula:</em> $$x = \\frac{-2 \\pm 8}{2}.$$</li>
-            <li><em>Simplify:</em> Therefore, $$x = 3$$ or $$x = -5.$$</li>
+            <li><em>Factor the expression:</em> Find numbers that multiply to 6 and add to -5.</li>
+            <li><em>The factors of 6 are:</em> 1 and 6, 2 and 3.</li>
+            <li><em>Check sums:</em> 1 + 6 = 7, 2 + 3 = 5.</li>
+            <li><em>We need -2 and -3, since:</em> (-2) + (-3) = -5 and (-2)(-3) = 6.</li>
+            <li><em>Factored form:</em> $$x^2 - 5x + 6 = (x - 2)(x - 3) = 0$$.</li>
+            <li><em>Apply zero product property:</em> Either $$x - 2 = 0$$ or $$x - 3 = 0$$.</li>
+            <li><em>Solutions:</em> $$x = 2$$ or $$x = 3$$.</li>
           </ol>
         </div>
       `,
     },
     {
-      question: "8. Solve 2x² - 5x + 2 = 0 using the quadratic formula.",
-      answer: [2, 0.5],
+      question: "8. Solve 2x² + 7x + 3 = 0 by factoring.",
+      answer: [-0.5, -3],
       check: (ans) => {
         let parts = ans
           .split(",")
           .map((s) => parseFloat(s.trim()))
           .sort((a, b) => a - b);
-        return Math.abs(parts[0] - 0.5) < 0.1 && Math.abs(parts[1] - 2) < 0.1;
+        return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - -0.5) < 0.1;
       },
       solution: `
         <div class="example">
           <h3>Step-by-Step Explanation</h3>
           <ol>
-            <li><em>Coefficients:</em> $$a = 2,\\; b = -5,\\; c = 2.$$</li>
-            <li><em>Discriminant:</em> $$\\Delta = (-5)^2 - 4\\times2\\times2=25-16=9.$$</li>
-            <li><em>Formula:</em> $$x = \\frac{5 \\pm 3}{4}.$$</li>
-            <li><em>Simplify:</em> Hence, $$x = 2$$ or $$x = 0.5.$$</li>
+            <li><em>Need to factor:</em> $$2x^2 + 7x + 3$$</li>
+            <li><em>Since $$a = 2$$:</em> Look for factors in form $$(2x + p)(x + q)$$</li>
+            <li><em>Need:</em> $$p \\cdot q = 3$$ and $$2q + p = 7$$</li>
+            <li><em>Try:</em> $$p = 1$$ and $$q = 3$$</li>
+            <li><em>Check:</em> $$2(3) + 1 = 7$$ ✓</li>
+            <li><em>Factored form:</em> $$2x^2 + 7x + 3 = (2x + 1)(x + 3) = 0$$</li>
+            <li><em>Solve:</em> $$2x + 1 = 0$$ gives $$x = -\\frac{1}{2}$$, and $$x + 3 = 0$$ gives $$x = -3$$</li>
           </ol>
         </div>
       `,
     },
     {
-      question: "9. Solve 7x² + 14x - 21 = 0 using the quadratic formula.",
-      answer: [1, -3],
+      question: "9. Solve x² + 6x + 8 = 0 by completing the square.",
+      answer: [-2, -4],
       check: (ans) => {
         let parts = ans
           .split(",")
           .map((s) => parseFloat(s.trim()))
           .sort((a, b) => a - b);
-        return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - 1) < 0.1;
+        return Math.abs(parts[0] - -4) < 0.1 && Math.abs(parts[1] - -2) < 0.1;
       },
       solution: `
         <div class="example">
           <h3>Step-by-Step Explanation</h3>
           <ol>
-            <li><em>Coefficients:</em> $$a = 7,\\; b = 14,\\; c = -21.$$</li>
-            <li><em>Discriminant:</em> $$\\Delta = 14^2 - 4\\times7\\times(-21)=196+588=784.$$</li>
-            <li><em>Formula:</em> $$x = \\frac{-14 \\pm \\sqrt{784}}{14} = \\frac{-14 \\pm 28}{14}.$$</li>
-            <li><em>Simplify:</em> So, $$x = 1$$ or $$x = -3.$$</li>
+            <li><em>Rearrange:</em> $$x^2 + 6x = -8$$</li>
+            <li><em>Half coefficient of x:</em> $$\\frac{6}{2} = 3$$</li>
+            <li><em>Square this value:</em> $$3^2 = 9$$</li>
+            <li><em>Add and subtract this value:</em> $$x^2 + 6x + 9 - 9 = -8$$</li>
+            <li><em>Factor perfect square trinomial:</em> $$(x + 3)^2 = 1$$</li>
+            <li><em>Take square root of both sides:</em> $$x + 3 = \\pm 1$$</li>
+            <li><em>Solve for x:</em> $$x = -3 \\pm 1$$, giving $$x = -2$$ or $$x = -4$$</li>
           </ol>
         </div>
       `,
     },
     {
-      question: "10. Using the quadratic formula, solve x² + 3x + 2 = 0.",
+      question: "10. Solve 2x² - 12x + 10 = 0 by completing the square.",
+      answer: [5, 1],
+      check: (ans) => {
+        let parts = ans
+          .split(",")
+          .map((s) => parseFloat(s.trim()))
+          .sort((a, b) => a - b);
+        return Math.abs(parts[0] - 1) < 0.1 && Math.abs(parts[1] - 5) < 0.1;
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Divide by 2:</em> $$x^2 - 6x + 5 = 0$$</li>
+            <li><em>Rearrange:</em> $$x^2 - 6x = -5$$</li>
+            <li><em>Half coefficient of x:</em> $$\\frac{-6}{2} = -3$$</li>
+            <li><em>Square this value:</em> $$(-3)^2 = 9$$</li>
+            <li><em>Add and subtract this value:</em> $$x^2 - 6x + 9 - 9 = -5$$</li>
+            <li><em>Factor perfect square trinomial:</em> $$(x - 3)^2 = 4$$</li>
+            <li><em>Take square root of both sides:</em> $$x - 3 = \\pm 2$$</li>
+            <li><em>Solve for x:</em> $$x = 3 \\pm 2$$, giving $$x = 5$$ or $$x = 1$$</li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question:
+        "11. The curve C has equation y = x² + 3x - 3 and the line L has equation y - 5x + 4 = 0. Show algebraically that C and L have exactly one point in common.",
+      answer: "The discriminant is 0",
+      check: (ans) => {
+        let lower = ans.toLowerCase();
+        return lower.includes("discriminant") && lower.includes("0");
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li>Write the line in standard form: $$y = 5x - 4.$$</li>
+            <li>Substitute into the curve: $$5x - 4 = x^2 + 3x - 3.$$</li>
+            <li>Simplify to obtain: $$x^2 - 2x + 1 = 0,$$ which factors as $$(x-1)^2 = 0.$$</li>
+            <li>This shows that there is one repeated solution, meaning the discriminant is 0 and the line touches the curve at exactly one point.</li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question:
+        "12. Convert the quadratic function y = 2x² - 8x - 5 to vertex form by completing the square.",
+      answer: "y = 2(x - 2)² - 13",
+      check: (ans) => {
+        let cleaned = ans.replace(/\s+/g, "").toLowerCase();
+        return (
+          cleaned.includes("2(x-2)²-13") || cleaned.includes("2(x-2)^2-13")
+        );
+      },
+      solution: `
+        <div class="example">
+          <h3>Step-by-Step Explanation</h3>
+          <ol>
+            <li><em>Factor out the coefficient of x²:</em> $$y = 2(x^2 - 4x) - 5$$</li>
+            <li><em>Half coefficient of x inside parentheses:</em> $$\\frac{-4}{2} = -2$$</li>
+            <li><em>Square this value:</em> $$(-2)^2 = 4$$</li>
+            <li><em>Add and subtract this value inside parentheses:</em> $$y = 2(x^2 - 4x + 4 - 4) - 5$$</li>
+            <li><em>Factor perfect square trinomial:</em> $$y = 2[(x - 2)^2 - 4] - 5$$</li>
+            <li><em>Distribute and simplify:</em> $$y = 2(x - 2)^2 - 8 - 5 = 2(x - 2)^2 - 13$$</li>
+            <li><em>The vertex form shows that the vertex is at (2, -13)</em></li>
+          </ol>
+        </div>
+      `,
+    },
+    {
+      question: "13. Solve x² + 3x + 2 = 0 by factoring.",
       answer: [-1, -2],
       check: (ans) => {
         let parts = ans
@@ -2026,42 +2321,46 @@ const quizzes = {
         <div class="example">
           <h3>Step-by-Step Explanation</h3>
           <ol>
-            <li><em>Coefficients:</em> $$a = 1,\\; b = 3,\\; c = 2.$$</li>
-            <li><em>Discriminant:</em> $$\\Delta = 3^2 - 4\\times1\\times2 = 9 - 8 = 1.$$</li>
-            <li><em>Formula:</em> $$x = \\frac{-3 \\pm 1}{2}.$$</li>
-            <li><em>Simplify:</em> Therefore, $$x = -1$$ or $$x = -2.$$</li>
+            <li><em>Factor the expression:</em> Find numbers that multiply to 2 and add to 3.</li>
+            <li><em>Since both the constant term and the coefficient of x are positive, we need two negative numbers.</em></li>
+            <li><em>The factors of 2 are:</em> 1 and 2.</li>
+            <li><em>Check sum:</em> (-1) + (-2) = -3, which is the negative of what we need.</li>
+            <li><em>Factored form:</em> $$x^2 + 3x + 2 = (x + 1)(x + 2) = 0$$.</li>
+            <li><em>Apply zero product property:</em> Either $$x + 1 = 0$$ or $$x + 2 = 0$$.</li>
+            <li><em>Solutions:</em> $$x = -1$$ or $$x = -2$$.</li>
           </ol>
         </div>
       `,
     },
     {
-      question: "11. Solve the non-standard equation: Solve $$x^2 = 5x + 24$$.",
-      answer: [8, -3],
+      question:
+        "14. For what value(s) of k will the equation x² + kx + 25 = 0 have equal roots?",
+      answer: "k = ±10",
       check: (ans) => {
-        let parts = ans
-          .split(",")
-          .map((s) => parseFloat(s.trim()))
-          .sort((a, b) => a - b);
-        return Math.abs(parts[0] - -3) < 0.1 && Math.abs(parts[1] - 8) < 0.1;
+        let cleaned = ans.replace(/\s+/g, "").toLowerCase();
+        return (
+          cleaned.includes("±10") ||
+          cleaned.includes("10,-10") ||
+          cleaned.includes("-10,10")
+        );
       },
       solution: `
         <div class="example">
           <h3>Step-by-Step Explanation</h3>
           <ol>
-            <li><em>Rearrange:</em> Subtract 5x + 24 from both sides to obtain: $$x^2 - 5x - 24 = 0.$$</li>
-            <li><em>Factorise:</em> The quadratic factors as: $$(x - 8)(x + 3) = 0.$$</li>
-            <li><em>Solution:</em> Thus, $$x = 8$$ or $$x = -3.$$</li>
+            <li><em>For equal roots, the discriminant must be zero:</em> $$b^2 - 4ac = 0$$</li>
+            <li><em>Identify coefficients:</em> $$a = 1, b = k, c = 25$$</li>
+            <li><em>Substitute:</em> $$k^2 - 4 \\times 1 \\times 25 = 0$$</li>
+            <li><em>Simplify:</em> $$k^2 - 100 = 0$$</li>
+            <li><em>Solve for k:</em> $$k^2 = 100$$</li>
+            <li><em>Take square root of both sides:</em> $$k = \\pm 10$$</li>
+            <li><em>Therefore, k = 10 or k = -10</em></li>
           </ol>
         </div>
       `,
     },
     {
-      question: `12. Evaluate the following expressions:
-(a) Write down the value of $$7^0$$.
-(b) Find the value of $$3^6 \\times 3^{-6}$$.
-(c) Find the value of $$2^{-4}$$.
-(d) Find the value of $$27^{1/3}$$.
-(Enter your answers separated by commas.)`,
+      question: "15. Evaluate: (a) 7⁰, (b) 3⁶ × 3⁻⁶, (c) 2⁻⁴, (d) 27¹/³",
       answer: [1, 1, 0.0625, 3],
       check: (ans) => {
         let parts = ans.split(",").map((s) => parseFloat(s.trim()));
@@ -2080,27 +2379,6 @@ const quizzes = {
             <li>(b) Using the exponent rule, $$3^6 \\times 3^{-6} = 3^{6-6} = 3^0 = 1.$$</li>
             <li>(c) A negative exponent indicates the reciprocal: $$2^{-4} = \\frac{1}{2^4} = \\frac{1}{16} = 0.0625.$$</li>
             <li>(d) The cube root of 27 is 3, so $$27^{1/3} = 3.$$</li>
-          </ol>
-        </div>
-      `,
-    },
-    {
-      question: `13. The curve C has equation $$y = x^2 + 3x - 3$$ and the line L has equation $$y - 5x + 4 = 0$$.
-Show, algebraically, that C and L have exactly one point in common.
-(Provide your reasoning in words.)`,
-      answer: "The discriminant is 0",
-      check: (ans) => {
-        let lower = ans.toLowerCase();
-        return lower.includes("discriminant") && lower.includes("0");
-      },
-      solution: `
-        <div class="example">
-          <h3>Step-by-Step Explanation</h3>
-          <ol>
-            <li>Write the line in standard form: $$y = 5x - 4.$$</li>
-            <li>Substitute into the curve: $$5x - 4 = x^2 + 3x - 3.$$</li>
-            <li>Simplify to obtain: $$x^2 - 2x + 1 = 0,$$ which factors as $$(x-1)^2 = 0.$$</li>
-            <li>This shows that there is one repeated solution, meaning the discriminant is 0 and the line touches the curve at exactly one point.</li>
           </ol>
         </div>
       `,
